@@ -81,6 +81,6 @@ let data = {
 
 /////////////////// 課題3-2 はここから書き始めよう
 
-for (let b of data.g1){
-	console.log(b);
+for (let b of data.list.g1){
+	console.log(b.title);
 }
