@@ -13,14 +13,13 @@ hantei();
 hantei();
 function hantei() {
     let yoso = 4;
-
-     kaisu=kaisu+1;
-     console.log(kaisu+"回目の予想:"+yoso);
+    kaisu=kaisu+1;
+    result.setAttribute=(kaisu+"回目の予想:"+yoso);
 
  if(kaisu>=4){
-        console.log(" 答えは"+kotae+"でした．すでにゲームは終わっています");
+    result.setAttribute=(" 答えは"+kotae+"でした．すでにゲームは終わっています");
     }else if(kaisu===3){
-        console.log("まちがい．残念でした答えは"+kotae+"でした．");
+        result.setAttribute=("まちがい．残念でした答えは"+kotae+"でした．");
 
 // ボタンを押した後の処理をする関数 hantei() の定義
        // 第5回課題:テキストボックスの数値をここに代入
@@ -29,13 +28,15 @@ function hantei() {
     //        判定結果はコンソールに出力すること
 
     }else if(kotae===yoso){
-        console.log("正解です．おめでとう!");
-        kaisu=4;
+         result.setAttribute="正解です．おめでとう!";
+              kaisu=4;
     }else if(kotae<yoso){
-        console.log("まちがい．答えはもっと小さいですよ");
+        result.setAttribute=("まちがい．答えはもっと小さいですよ");
     }else if(kotae>yoso){
-        console.log("まちがい．答えはもっと大きいですよ");
+        result.setAttribute=("まちがい．答えはもっと大きいですよ");
     }
+    let s = document.querySelector('p#result');
+s.textContent = result;
 }
 
     
