@@ -81,6 +81,14 @@ let data = {
 
 /////////////////// 課題3-2 はここから書き始めよう
 
-for (let b of data.list.g1){
-	console.log(b.title);
+let hante = document.querySelector('#print');
+hante.addEventListener('click', hantei);
+function hantei() {
+  let i = document.querySelector('input[name="banngumi"]');
+	for(let r of i){
+    if(r.genre){
+      let katta=document.querySelector('#projects');
+         katta.textContent=(r.title);
+    }
+  }
 }
