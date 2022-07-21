@@ -1,4 +1,4 @@
-let data = {
+let dat = {
   "list": {
     "g1": [
       {
@@ -81,12 +81,14 @@ let data = {
 
 /////////////////// 課題3-2 はここから書き始めよう
 
-let hante = document.querySelector('#print');
-hante.addEventListener('click', hantei);
-function hantei() {
- let service=document.querySelector('input[name="banngumi1"]');
-	let genre=document.querySelector('input[name="banngumi2"]');
+let b = document.querySelector('#print');
+b.addEventListener('click', print);
 
+function print() {
+ let s =document.querySelector('input[name="banngumi1"]');
+ let service= s.value;
+	let g=document.querySelector('input[name="banngumi2"]');
+  let genre= g.value;
   let url='https://www.nishita-lab.org/web-contents/jsons/nhk/'+service+'-'+genre+'-j.json';
   
   axios.get(url)
@@ -100,17 +102,43 @@ function showResult(resp) {
   
 
   let data = resp.data;
-
+  
 	if (typeof data === 'string') {
 		data = JSON.parse(data);
 	}
-  let kekka=document.querySelector('#kekka');
-	// data をコンソールに出力
-	kekka.textContent=data;
+  let s =document.querySelector('input[name="banngumi1"]');
+ let service= s.value;
+ if(service==="g1"){
+  for (let n of data.list.se) {
+  let p1=document.querySelector('p#zzz');
+  let b = document.createElement('h4');
+  b.textContent=n.start_time;
+ p1.insertAdjacentElement('afterend', b);
 
-	// data.x を出力
-	kekka.textContent=data.x;
+ let p=document.querySelector('p#z');
+ let a = document.createElement('p');
+ a.textContent=n.end_time;
+ p.insertAdjacentElement('afterend', a);
+  } 
 }
+  data = resp.data;
+  if(service==="e1"){
+    for (let n of data.list.g1.e1) {
+      let p1=document.querySelector('p#zzz');
+      let b = document.createElement('h4');
+      b.textContent=n.start_time;
+     p1.insertAdjacentElement('afterend', b);
+    
+     let p=document.querySelector('p#z');
+     let a = document.createElement('p');
+     a.textContent=n.end_time;
+     p.insertAdjacentElement('afterend', a);
+    }
+  }
+}
+
+
+
 
 // 通信エラーが発生した時の処理
 function showError(err) {
@@ -118,9 +146,9 @@ function showError(err) {
 }	
 
 // 通信の最後にいつも実行する処理
-function finish() {
+function finish() { 
+
 	console.log('Ajax 通信が終わりました');
 }
 
-      let katta=document.querySelector('#projects');
-        
+  

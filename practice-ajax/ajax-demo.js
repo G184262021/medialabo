@@ -16,6 +16,8 @@ function sendRequest() {
 
 // 通信が成功した時の処理
 function showResult(resp) {
+	//検索キー取得
+
 	// サーバから送られてきたデータを出力
 	let data = resp.data;
 
@@ -26,7 +28,6 @@ function showResult(resp) {
 
 	// data をコンソールに出力
 	console.log(data);
-
 	// data.x を出力
 	console.log(data.x);
 }
