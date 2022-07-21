@@ -84,11 +84,43 @@ let data = {
 let hante = document.querySelector('#print');
 hante.addEventListener('click', hantei);
 function hantei() {
-  let i = document.querySelector('input[name="banngumi"]');
-	for(let r of i){
-    if(r.genre){
-      let katta=document.querySelector('#projects');
-         katta.textContent=(r.title);
-    }
-  }
+ let service=document.querySelector('input[name="banngumi1"]');
+	let genre=document.querySelector('input[name="banngumi2"]');
+
+  let url='https://www.nishita-lab.org/web-contents/jsons/nhk/'+service+'-'+genre+'-j.json';
+  
+  axios.get(url)
+  .then(showResult)
+  .catch(showError)
+  .then(finish);
 }
+
+// 通信が成功した時の処理
+function showResult(resp) {
+  
+
+  let data = resp.data;
+
+	if (typeof data === 'string') {
+		data = JSON.parse(data);
+	}
+  let kekka=document.querySelector('#kekka');
+	// data をコンソールに出力
+	kekka.textContent=data;
+
+	// data.x を出力
+	kekka.textContent=data.x;
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+	console.log(err);
+}	
+
+// 通信の最後にいつも実行する処理
+function finish() {
+	console.log('Ajax 通信が終わりました');
+}
+
+      let katta=document.querySelector('#projects');
+        

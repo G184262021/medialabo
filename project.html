@@ -5,37 +5,19 @@
     <title>My test page</title>
     <link rel="stylesheet" href="prpject.css">
     <script src="tv-program.js" defer></script> 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
   </head>
   <body>
 <h1>NHKの番組表</h1>
-<spown id="projects"></spown>
-<input type="checkbox" name="banngumi" id="banngumi1" value=0000>
-<p><label for="banngumi1">ニュース・報道</label></p>
-<p><input type="checkbox" name="banngumi" id="banngumi2" value=0100></p>
-<p><label for="banngumi2">スポーツ</label></p>
-<p></p><input type="checkbox" name="banngumi" id="banngumi3" value=0205>
-<p></p><label for="banngumi3">情報・ワイドショー</label>
-<p></p><input type="checkbox" name="banngumi" id="banngumi4" value=0300>
-<p></p><label for="banngumi4">ドラマ</label>
-<p></p><input type="checkbox" name="banngumi" id="banngumi5" value=0409>
-<p></p><label for="banngumi5">音楽</label>
-<p></p><input type="checkbox" name="banngumi" id="banngumi6" value=0502>
-<p></p><label for="banngumi6">バラエティ</label>
-<p></p><input type="checkbox" name= "banngumi"id="banngumi7" value=0600>
-<p></p><label for="banngumi7">映画</label>
-<input type="checkbox"  name="banngumi"id="banngumi8" value=0700>
-<label for="banngumi8">アニメ</label>
-<input type="checkbox"  name="banngumi"id="banngumi9" value=0800>
-<label for="banngumi9">ドキュメンタリー・教養</label>
-<input type="checkbox" name="banngumi" id="banngumi10" value=0903>
-<label for="banngumi10">劇場・公演</label>
-<input type="checkbox" name="banngumi" id="banngumi11"value=1000 >
-<label for="banngumi11">趣味・教育</label>
 
-<input type="checkbox" name="banngumi" id="banngumi12"value=1100 >
-<label for="banngumi11">福祉</label>
+<label for="banngumi">チャンネルを入力してください。</label>
+<input type="text" name="banngumi1" size10 >
+
+<label for="banngumi11">ジャンルを入力してください。</label>
+  <input type="text" name="banngumi2" size10 >
 	<button id="print">検索</button>
+  <p><spown id="kekka"></spown></p>
+
 
 <table>0000 ... ニュース・報道</table>
 <table>0100 ... スポーツ</table>
