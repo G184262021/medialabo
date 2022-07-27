@@ -44,7 +44,7 @@ let dat = {
         "event_id": "27069",
         "start_time": "2022-03-04T23:05:00+09:00",
         "end_time": "2022-03-04T23:10:00+09:00",
-        "area": {
+        "s": {
           "id": "130",
           "name": "東京"
         },
@@ -81,6 +81,7 @@ let dat = {
 
 /////////////////// 課題3-2 はここから書き始めよう
 
+
 let b = document.querySelector('#print');
 b.addEventListener('click', print);
 
@@ -90,7 +91,7 @@ function print() {
 	let g=document.querySelector('input[name="banngumi2"]');
   let genre= g.value;
   let url='https://www.nishita-lab.org/web-contents/jsons/nhk/'+service+'-'+genre+'-j.json';
-  
+ 
   axios.get(url)
   .then(showResult)
   .catch(showError)
@@ -99,40 +100,56 @@ function print() {
 
 // 通信が成功した時の処理
 function showResult(resp) {
-  
+
 
   let data = resp.data;
   
 	if (typeof data === 'string') {
+   
 		data = JSON.parse(data);
 	}
   let s =document.querySelector('input[name="banngumi1"]');
  let service= s.value;
  if(service==="g1"){
-  for (let n of data.list.se) {
-  let p1=document.querySelector('p#zzz');
-  let b = document.createElement('h4');
-  b.textContent=n.start_time;
- p1.insertAdjacentElement('afterend', b);
 
- let p=document.querySelector('p#z');
- let a = document.createElement('p');
- a.textContent=n.end_time;
- p.insertAdjacentElement('afterend', a);
+  for (let n of data.list.g1) {
+    
+  let p1=document.querySelector('p#z');
+   let aa = document.createElement('p');
+  aa.textContent=n.title;
+ p1.insertAdjacentElement('afterend', aa);
+
+ let p4=document.querySelector('p#z1');
+ let a4 = document.createElement('p');
+ a4.textContent=n.start_time;
+ p4.insertAdjacentElement('afterend', a4);
+
+
+ let p5=document.querySelector('p#z2');
+ let a5 = document.createElement('p');
+ a5.textContent=n.end_time;
+ p5.insertAdjacentElement('afterend', a5);
+
   } 
-}
+ }
   data = resp.data;
   if(service==="e1"){
-    for (let n of data.list.g1.e1) {
-      let p1=document.querySelector('p#zzz');
-      let b = document.createElement('h4');
-      b.textContent=n.start_time;
-     p1.insertAdjacentElement('afterend', b);
-    
-     let p=document.querySelector('p#z');
-     let a = document.createElement('p');
-     a.textContent=n.end_time;
-     p.insertAdjacentElement('afterend', a);
+
+    for (let n of data.list.e1) {
+      let p1=document.querySelector('p#z');
+  let aa = document.createElement('p');
+  aa.textContent=n.title;
+ p1.insertAdjacentElement('afterend', aa);
+
+ let p4=document.querySelector('p#z1');
+ let a4 = document.createElement('p');
+ a4.textContent=n.start_time;
+ p4.insertAdjacentElement('afterend', a4);
+
+ let p5=document.querySelector('p#z2');
+ let a5 = document.createElement('p');
+ a5.textContent=n.end_time;
+ p5.insertAdjacentElement('afterend', a5);
     }
   }
 }
