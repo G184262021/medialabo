@@ -15,7 +15,7 @@ a:link {
     text-decoration: rgb(189, 228, 152);
   }
   h3{
-    border-bottom: dashed rgb(40, 255, 205);
+    border-bottom: dashed rgb(94, 116, 225);
   }
   .a{border-bottom: thick double rgb(0, 225, 255);
 }
@@ -23,5 +23,5 @@ a:link {
     color: rgb(0, 255, 149);
 }
 h2{
-    border-bottom: 4mm ridge rgba(84, 199, 80, 0.87);
+  border-bottom: rgb(48, 222, 196);
 }
