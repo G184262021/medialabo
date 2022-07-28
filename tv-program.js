@@ -111,13 +111,16 @@ function showResult(resp) {
   let s =document.querySelector('input[name="banngumi1"]');
  let service= s.value;
  if(service==="g1"){
-
+ let x=0;
   for (let n of data.list.g1) {
+   
     
   let p1=document.querySelector('p#z');
    let aa = document.createElement('p');
   aa.textContent=n.title;
  p1.insertAdjacentElement('afterend', aa);
+
+
 
  let p4=document.querySelector('p#z1');
  let a4 = document.createElement('p');
@@ -129,6 +132,7 @@ function showResult(resp) {
  let a5 = document.createElement('p');
  a5.textContent=n.end_time;
  p5.insertAdjacentElement('afterend', a5);
+
 
   } 
  }
@@ -136,10 +140,14 @@ function showResult(resp) {
   if(service==="e1"){
 
     for (let n of data.list.e1) {
+  
+
       let p1=document.querySelector('p#z');
   let aa = document.createElement('p');
   aa.textContent=n.title;
  p1.insertAdjacentElement('afterend', aa);
+
+
 
  let p4=document.querySelector('p#z1');
  let a4 = document.createElement('p');
@@ -150,6 +158,7 @@ function showResult(resp) {
  let a5 = document.createElement('p');
  a5.textContent=n.end_time;
  p5.insertAdjacentElement('afterend', a5);
+
     }
   }
 }
