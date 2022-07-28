@@ -1,10 +1,10 @@
-h1{border-bottom: 1rem solid rgb(255, 174, 0);
+h1{border-bottom: 1rem solid rgb(60, 255, 0);
 }
 h2{
     font-style: oblique;
 }
 a:link {
-    color: rgb(24, 136, 30);
+    color: rgb(17, 214, 99);
   }
   
   a:visited {
@@ -15,12 +15,12 @@ a:link {
     text-decoration: rgb(189, 228, 152);
   }
   h3{
-    border-bottom: dashed rgb(255, 65, 40);
+    border-bottom: dashed rgb(40, 255, 205);
   }
-  .a{border-bottom: thick double orange;
+  .a{border-bottom: thick double rgb(0, 225, 255);
 }
  em{
-    color: rgb(255, 0, 0);
+    color: rgb(0, 255, 149);
 }
 h2{
     border-bottom: 4mm ridge rgba(84, 199, 80, 0.87);
